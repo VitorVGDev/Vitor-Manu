@@ -1,0 +1,178 @@
+body {
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(to bottom, #ffffff, #ffc0cb); /* Degradê rosa para branco */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+    color: rgba(20, 30, 48, 0.9); /* Cor do texto alterada */
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(255, 105, 180, 0.3), rgba(255, 105, 180, 0)); /* Degradê mais transparente de preto a rosa */
+    color: rgba(20, 30, 48, 0.9); /* Cor do texto alterada */
+    font-weight: 700;
+    font-family: 'Arial Rounded MT Bold', sans-serif;
+}
+
+h1 {
+    color: rgba(20, 30, 48, 0.9); /* Cor do texto alterada */
+}
+
+.intro, .gallery, .messages, .countdown, .music {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.9); /* Alterei para combinar melhor com o fundo */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    color: rgba(20, 30, 48, 0.9); /* Cor do texto alterada */
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.intro:hover, .gallery:hover, .messages:hover, .countdown:hover, .music:hover {
+    transform: scale(1.02);
+}
+
+.photo-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid #ffc0cb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#countdown-timer {
+    font-size: 2em;
+    text-align: center;
+    padding: 20px;
+    background: #ffc0cb;
+    color: rgba(20, 30, 48, 0.9); /* Cor do texto alterada */
+    border-radius: 10px;
+}
+
+.music {
+    text-align: center;
+    font-style: italic;
+    color: rgba(20, 30, 48, 0.9); /* Cor do texto alterada */
+}
+
+.music-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9); /* Manter a consistência com o estilo */
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.music-image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 5px;
+    width: 100px; /* Ajustar para um tamanho menor */
+    height: 100px;
+    border: 5px solid;
+    border-image: linear-gradient(45deg, red, yellow, green, cyan, blue, magenta, red) 1;
+    animation: chroma-border 5s linear infinite;
+}
+
+.music-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+@keyframes chroma-border {
+    0% {
+        border-image-source: linear-gradient(45deg, red, yellow, green, cyan, blue, magenta, red);
+    }
+    100% {
+        border-image-source: linear-gradient(405deg, red, yellow, green, cyan, blue, magenta, red);
+    }
+}
+
+.music audio {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto 0;
+    display: block;
+    background: rgba(255, 204, 203, 0.8); /* Fundo transparente */
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    color: rgba(20, 30, 48, 0.9); /* Cor do texto alterada */
+}
+
+#background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.star, .heart {
+    position: absolute;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    animation: fall linear infinite;
+}
+
+.star {
+    background: url('imgs/love-and-romance.png') no-repeat center;
+    background-size: contain;
+}
+
+.heart {
+    background: url('imgs/heart.png') no-repeat center;
+    background-size: contain;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+.behind-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
